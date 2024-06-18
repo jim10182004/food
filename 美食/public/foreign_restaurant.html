@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西式餐廳</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1d1f21, #4e555b);
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .restaurants {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        .restaurant {
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .restaurant:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .restaurant img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .restaurant-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .restaurant-info h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .restaurant-info p {
+            margin-bottom: 0;
+            color: #666;
+        }
+
+        .restaurant:hover .address {
+            opacity: 1;
+        }
+
+        .address {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>西式餐廳</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">主頁</a></li>
+                <li><a href="chinese_restaurant.html">中式餐廳</a></li>
+                <li><a href="foreign_restaurant.html">西式餐廳</a></li>
+                <li><a href="bistro.html">餐酒館</a></li>
+                <li><a href="ramen.html">拉麵館</a></li>
+                <li><a href="cafes.html">咖啡館</a></li>
+                <li><a href="night_market.html">夜市</a></li>
+              
+                <li><a href="contact.html">聯繫我</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="restaurants">
+        <a href="foreign_restaurant1.html" class="restaurant">
+            <img src="https://www.jeremyfoodie.tw/wp-content/uploads/2024/02/20240216_174838-2.jpg" alt="餐厅照片1">
+            <div class="restaurant-info">
+                <h3>《BT Burger》</h3>
+                <p>台北市捷運忠孝復興站附近安東街上的美式漢堡店「BT Burger」，
+                    這家的牛肉漢堡排是選用美國Choice級原塊牛排肉加入日本和牛油花純手工製作，
+                    食材用料優質實在，
+                    供應的各款漢堡都挺美味，
+                    食量大的可以挑戰看看牛、雞、魚三拼的中元普渡堡。XD</p>
+            </div>
+        </a>
+        <a href="foreign_restaurant2.html" class="restaurant">
+            <img src="https://evantravel.tw/wp-content/uploads/pixnet/d77852681b8857edd7621514857b52bb.jpg" alt="餐厅照片2">
+            <div class="restaurant-info">
+                <h3>《UMAMI金色三麥》</h3>
+                <p>UMAMI 金色三麥的用餐環境充滿華貴優雅的氛圍，仿佛置身於比佛利山（Beverly Hills）的奢華場所。走入店內，會被時尚的L型酒吧吸引，金銅色系的黃光透射營造出溫暖迷人的氛圍。整面水晶酒杯和生啤酒更增添了浪漫放鬆的感覺，讓人忍不住想好好放鬆一下。</p>
+            </div>
+        </a>
+        <a href="foreign_restaurant3.html" class="restaurant">
+            <img src="https://www.masterpon.com/wp-content/uploads/butcherjr16.jpg" alt="餐厅照片3">
+            <div class="restaurant-info">
+                <h3>《Butcher jr. by Lanpengyou》</h3>
+                <p>漢堡肉品自由選擇！！彈性、好玩且帶點童趣的方式做出更生活化、有趣的漢堡</p>
+            </div>
+        </a>
+        <!-- 添加更多餐廳 -->
+     
+    </section>
+
+    <footer>
+        <p>&copy; 2024 我的探店之旅. 版權所有.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我 - 我的探店之旅</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        header {
+            background-color: rgba(248, 249, 250, 0.8);
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #007bff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 120px auto 40px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #343a40;
+            text-align: center;
+        }
+
+        h2 {
+            border-bottom: 2px solid #343a40;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #343a40;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ffc107;
+        }
+
+        footer {
+            background-color: rgba(248, 249, 250, 0.8);
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>聯繫我</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">主頁</a></li>
+                <li><a href="chinese_restaurant.html">中式餐廳</a></li>
+                <li><a href="foreign_restaurant.html">西式餐廳</a></li>
+                <li><a href="bistro.html">餐酒館</a></li>
+                <li><a href="ramen.html">拉麵館</a></li>
+                <li><a href="cafes.html">咖啡館</a></li>
+                <li><a href="night_market.html">夜市</a></li>
+                <li><a href="contact.html">聯繫我</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>聯繫表單</h2>
+        <form action="/submit_contact_form" method="post">
+            <label for="name">姓名：</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">信箱：</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">留言：</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <input type="submit" value="提交">
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 我的探店之旅. 版權所有.</p>
+    </footer>
+</body>
+</html>

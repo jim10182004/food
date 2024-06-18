@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>餐厅介绍</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1d1f21, #4e555b);
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .gallery img {
+            width: calc(33.333% - 10px);
+            border-radius: 10px;
+            flex-grow: 1;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .restaurant-info {
+            margin-bottom: 20px;
+        }
+
+        .restaurant-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .reviews {
+            margin-top: 20px;
+        }
+
+        .review {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .review p {
+            margin: 0;
+            color: #555;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-content {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {-webkit-transform: scale(0)} 
+            to {-webkit-transform: scale(1)}
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0)} 
+            to {transform: scale(1)}
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 700px){
+            .modal-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">主頁</a></li>
+                <li><a href="chinese_restaurant.html">中式餐廳</a></li>
+                <li><a href="foreign_restaurant.html">西式餐廳</a></li>
+                <li><a href="bistro.html">餐酒館</a></li>
+                <li><a href="ramen.html">拉麵館</a></li>
+                <li><a href="cafes.html">咖啡館</a></li>
+                <li><a href="night_market.html">夜市</a></li>
+               
+                <li><a href="contact.html">聯繫我 </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>《Ariel lee 李氏• Cafe》</h1>
+        <div class="gallery">
+            <img src="https://anikolife.com/wp-content/uploads/20220414142226_13.jpg" alt="餐厅照片1">
+            <img src="https://anikolife.com/wp-content/uploads/20220414142303_86.jpg" alt="餐厅照片2">
+            <img src="https://anikolife.com/wp-content/uploads/20220414142337_77.jpg" alt="餐厅照片3">
+            <!-- 添加更多图片 -->
+        </div>
+        <div class="restaurant-info">
+            <p><strong>地址:</strong> 台北市大安區忠孝東路四段205巷29弄7號 </p>
+            <p><strong>電話:</strong> 02-87718006</p>
+            <p><strong>營業時間:</strong> 每日	12:30~21:00</p>
+        </div>
+        <div class="reviews">
+            <h2>版主點評</h2>
+            <div class="review">
+                <p><strong>小羊:</strong>能夠做到一入口就令人眼睛睜大的驚豔滋味，Ariel lee 李氏• Cafe完全辦到了！！！！！
+                    一掃稍早還因為店員態度有點冷漠的不快感，在餐點上桌品嚐後，整個不爭氣的被圈粉，可惡！ 😈
+                    這義大利麵也煮得太好吃了吧～～～～   麵條口感保有彈性恰到好處，醬汁收得剛剛好，
+                    每一條麵條都完全的包覆了奶油青醬的濃郁香氣，再加上柔軟不柴的鮭魚塊，點綴幾個蕃茄粒</p>
+            </div>
+            <!-- 添加更多评论 -->
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 我的探店之旅. 版權所有.</p>
+    </footer>
+
+    <script>
+        // 获取模态窗口
+        var modal = document.getElementById("myModal");
+
+        // 获取图片，并在点击时将其显示在模态窗口中
+        var modalImg = document.getElementById("img01");
+        var images = document.querySelectorAll(".gallery img");
+        images.forEach(img => {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        // 获取 <span> 元素，设置关闭模态窗口的功能
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
