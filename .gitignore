@@ -1,0 +1,7 @@
+# 聯絡表單資料庫（含個資），只留在本機
+*.db
+*.sqlite
+
+# Node / Python
+node_modules/
+__pycache__/
