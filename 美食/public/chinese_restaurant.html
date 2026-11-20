@@ -1,167 +1,68 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-Hant-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>西式餐廳</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Noto Sans TC', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f2f5;
-        }
-
-        header {
-            background: linear-gradient(90deg, #1d1f21, #4e555b);
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: bold;
-        }
-
-        .restaurants {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            justify-items: center;
-        }
-
-        .restaurant {
-            background-color: #ffffff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .restaurant:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .restaurant img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .restaurant-info {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .restaurant-info h3 {
-            margin-top: 0;
-            font-size: 1.5rem;
-            color: #333;
-        }
-
-        .restaurant-info p {
-            margin-bottom: 0;
-            color: #666;
-        }
-
-        .restaurant:hover .address {
-            opacity: 1;
-        }
-
-        .address {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #ffffff;
-            padding: 5px 10px;
-            border-radius: 5px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        footer {
-            background-color: #343a40;
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中式餐廳｜我的探店之旅</title>
+<meta name="description" content="蝦仁飯、酸菜魚、手工水餃，吃得飽又不貴的中式味道。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-    <header>
-        <h1>中式餐廳</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">主頁</a></li>
-                <li><a href="chinese_restaurant.html">中式餐廳</a></li>
-                <li><a href="foreign_restaurant.html">西式餐廳</a></li>
-                <li><a href="bistro.html">餐酒館</a></li>
-                <li><a href="ramen.html">拉麵館</a></li>
-                <li><a href="cafes.html">咖啡館</a></li>
-                <li><a href="night_market.html">夜市</a></li>
-                
-                <li><a href="contact.html">聯繫我</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="restaurants">
-        <a href="chinese_restaurant1.html" class="restaurant">
-            <img src="https://khithok.com/wp-content/uploads/2024/03/LINE_ALBUM_202434-_2_240304_1.jpg" alt="餐厅照片1">
-            <div class="restaurant-info">
-                <h3>《忠青商行》</h3>
-                <p>台北居然也吃得到蝦仁飯，實在太幸福了吧！在網路上小有名氣的忠青商行本店，地點在捷運善導寺站附近，青島東路上，離成功高中很近！台北車站微風二樓、信義遠百、大葉高島屋、台北101、新莊宏匯廣場等百貨裡也有間忠青商行的百貨門市喔。以平實的價格卻能吃到滿滿的誠意，爆量蝦仁飯、古早味炸排骨、濃厚雞白湯、各式滷味等等都是推薦必點！
-
-                </p>
-            </div>
-        </a>
-        <a href="chinese_restaurant2.html" class="restaurant">
-            <img src="https://hips.hearstapps.com/hmg-prod/images/12%E5%88%81%E6%B0%91%E9%85%B8%E8%8F%9C%E9%AD%9A%E8%A5%BF%E9%96%80%E5%BA%97-%E5%BA%97%E5%A4%96%E8%A7%80-jpg-65af8c1b2a75b.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="餐厅照片2">
-            <div class="restaurant-info">
-                <h3>《刁民酸菜魚》</h3>
-                <p>掀起台灣酸菜魚流行的酸菜魚專賣店指標品牌「刁民酸菜魚」必吃餐點推薦！自2019年台中起家，以直徑52公分、比臉盆還要大的大份量「秘罈酸菜魚」、「初戀番茄魚」著稱，匠心獨具的招牌龍骨高湯、秘罈醃製台灣酸菜以及肉質緊實滑順的烏鱧魚片等多種細微講究，深受饕客喜愛，全台6家店舖至今排隊人潮不斷。甫開幕一個月的台北西門店，用餐人潮已衝破3萬人次、營業額直逼2,000萬元，而話題亮點不只是招牌酸菜魚，新上市的「完美蝦滑」幾乎每桌必點，就連店舖供應的「四季水果茶」、「神級奶茶」也被客人稱是被酸菜魚耽誤的飲料！</p>
-            </div>
-        </a>
-        <a href="chinese_restaurant3.html" class="restaurant">
-            <img src="https://tenjo.tw/wp-content/uploads/JAP_4945-2.jpg" alt="餐厅照片3">
-            <div class="restaurant-info">
-                <h3>《巧之味手工水餃》</h3>
-                <p>台北有份幾大名餃清單，不同媒體做的榜單都不太一樣
-
-                    但《巧之味手工水餃》絕對是榜上有名，無論哪篇報導都有他，多年來時不時就會去回訪報到，推薦給身邊朋友也都獲得不錯評價
-                    
-                    不得不說，《巧之味手工水餃》真的有夠好吃，我只咬了一口，就決定是五顆星推薦，尤其綠色外皮的干貝水餃更是神美味等級，都想直接買冷凍生水餃回家了耶！
-                    
-                    </p>
-            </div>
-        </a>
-        <!-- 添加更多餐廳 -->
-     
-    </section>
-
-    <footer>
-        <p>&copy; 2024 我的探店之旅. 版權所有.</p>
-    </footer>
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">我的探店之旅</a>
+    <nav class="site-nav" aria-label="網站導覽"><ul><li><a href="chinese_restaurant.html" aria-current="page">中式餐廳</a></li><li><a href="foreign_restaurant.html">西式餐廳</a></li><li><a href="bistro.html">餐酒館</a></li><li><a href="ramen.html">拉麵館</a></li><li><a href="cafes.html">咖啡館</a></li><li><a href="night_market.html">夜市</a></li><li class="nav-contact"><a href="contact.html">聯絡我們</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<div class="wrap">
+  <header class="page-head">
+    <p class="crumb"><a href="index.html">首頁</a></p>
+    <h1>中式餐廳</h1>
+    <p class="lede">蝦仁飯、酸菜魚、手工水餃，吃得飽又不貴的中式味道。</p>
+  </header>
+  <ul class="shop-list">
+    <li class="shop-item">
+      <a class="ph" href="chinese_restaurant1.html" tabindex="-1" aria-hidden="true"><img src="https://khithok.com/wp-content/uploads/2024/03/LINE_ALBUM_202434-_2_240304_1.jpg" alt="忠青商行 的照片" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('broken')"><span class="ph-fallback" aria-hidden="true">忠青商行<br>照片暫時載不到</span></a>
+      <div>
+        <h2><a href="chinese_restaurant1.html">忠青商行</a></h2>
+        <p class="shop-area">中正區</p>
+        <p class="shop-intro">台北居然也吃得到蝦仁飯，實在太幸福了吧！在網路上小有名氣的忠青商行本店，地點在捷運善導寺站附近，青島東路上，離成功高中很近！台北車站微風二樓、信義遠百、大葉高島屋、台北101、新莊宏匯廣場等百貨裡也有間忠青商行的百貨門市喔。以平實的價格卻能吃到滿滿的誠意，爆量蝦仁飯、古早味炸排骨、濃厚雞白湯、各式滷味等等都是推薦必點！</p>
+        <p class="note"><span class="who">小羊</span>這裡的型式以套餐為主，主餐搭配三樣小菜的方式，有點像吃定食的FU！只是，這一次吃的以新品項為主，感覺吃起來較為普通，建議還是點招牌的蝦仁飯、爛肉飯，吃起來比較道地，不愧是招牌~推薦給大家~！！</p>
+        <a class="shop-more" href="chinese_restaurant1.html">看完整介紹和地址</a>
+      </div>
+    </li><li class="shop-item">
+      <a class="ph" href="chinese_restaurant2.html" tabindex="-1" aria-hidden="true"><img src="https://hips.hearstapps.com/hmg-prod/images/12%E5%88%81%E6%B0%91%E9%85%B8%E8%8F%9C%E9%AD%9A%E8%A5%BF%E9%96%80%E5%BA%97-%E5%BA%97%E5%A4%96%E8%A7%80-jpg-65af8c1b2a75b.jpg?crop=1xw:1xh;center,top&amp;resize=980:*" alt="刁民酸菜魚 的照片" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('broken')"><span class="ph-fallback" aria-hidden="true">刁民酸菜魚<br>照片暫時載不到</span></a>
+      <div>
+        <h2><a href="chinese_restaurant2.html">刁民酸菜魚</a></h2>
+        <p class="shop-area">萬華區</p>
+        <p class="shop-intro">掀起台灣酸菜魚流行的酸菜魚專賣店指標品牌「刁民酸菜魚」必吃餐點推薦！自2019年台中起家，以直徑52公分、比臉盆還要大的大份量「秘罈酸菜魚」、「初戀番茄魚」著稱，匠心獨具的招牌龍骨高湯、秘罈醃製台灣酸菜以及肉質緊實滑順的烏鱧魚片等多種細微講究，深受饕客喜愛，全台6家店舖至今排隊人潮不斷。甫開幕一個月的台北西門店，用餐人潮已衝破3萬人次、營業額直逼2,000萬元，而話題亮點不只是招牌酸菜魚，新上市的「完美蝦滑」幾乎每桌必點，就連店舖供應的「四季水果茶」、「神級奶茶」也被客人稱是被酸菜魚耽誤的飲料！</p>
+        <p class="note"><span class="who">小羊</span>刁民還有一個與其他酸菜魚較大的差異，就是不用一直吐花椒粒，因為上桌前已經預先撈起，這是體貼客人的小細節。或許也是因為如此，湯頭入口沒這麼重麻，更接近我對花椒的接受度。</p>
+        <a class="shop-more" href="chinese_restaurant2.html">看完整介紹和地址</a>
+      </div>
+    </li><li class="shop-item">
+      <a class="ph" href="chinese_restaurant3.html" tabindex="-1" aria-hidden="true"><img src="https://tenjo.tw/wp-content/uploads/JAP_4945-2.jpg" alt="巧之味手工水餃 的照片" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('broken')"><span class="ph-fallback" aria-hidden="true">巧之味手工水餃<br>照片暫時載不到</span></a>
+      <div>
+        <h2><a href="chinese_restaurant3.html">巧之味手工水餃</a></h2>
+        <p class="shop-area">中正區</p>
+        <p class="shop-intro">台北有份幾大名餃清單，不同媒體做的榜單都不太一樣 但《巧之味手工水餃》絕對是榜上有名，無論哪篇報導都有他，多年來時不時就會去回訪報到，推薦給身邊朋友也都獲得不錯評價 不得不說，《巧之味手工水餃》真的有夠好吃，我只咬了一口，就決定是五顆星推薦，尤其綠色外皮的干貝水餃更是神美味等級，都想直接買冷凍生水餃回家了耶！</p>
+        <p class="note"><span class="who">微笑</span>巧之味的水餃，大概是我吃過全台北最好吃的，尤其干貝水餃鮮嫩多汁，重點是新鮮度，我是一個吃干貝會過敏的人，但吃了這家的干貝水餃，我瘸沒有拉肚子，超推薦大家去吃看看。</p>
+        <a class="shop-more" href="chinese_restaurant3.html">看完整介紹和地址</a>
+      </div>
+    </li>
+  </ul>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>&copy; 2024–2026 我的探店之旅　點評：小羊、微笑</p>
+    <p>店家資料整理於 2024 年，營業時間可能變動，出發前請先確認。</p>
+  </div>
+</footer>
+<script src="assets/site.js"></script>
 </body>
 </html>

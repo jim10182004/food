@@ -1,74 +1,58 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-Hant-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的探店之旅</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('https://stage.taipei101mall.com.tw/uploads/content/43bc7f6a-408f-6291-6098-6df282d8c65a.png'); /* 图片路径 */
-            background-size: cover;
-            background-position: top center; /* 调整背景图片位置 */
-            background-repeat: no-repeat;
-        }
-
-        header {
-            background-color: rgba(248, 249, 250, 0.8); /* 设置半透明背景颜色 */
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        footer {
-            background-color: rgba(248, 249, 250, 0.8); /* 设置半透明背景颜色 */
-            padding: 20px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的探店之旅｜小羊和微笑的台北探店筆記</title>
+<meta name="description" content="小羊和微笑的台北探店筆記：中式、西式、餐酒館、拉麵、咖啡館和夜市。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-    <header>
-        <h1>歡迎來到我的探店之旅</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">主頁</a></li>
-                <li><a href="chinese_restaurant.html">中式餐廳</a></li>
-                <li><a href="foreign_restaurant.html">西式餐廳</a></li>
-                <li><a href="bistro.html">餐酒館</a></li>
-                <li><a href="ramen.html">拉麵館</a></li>
-                <li><a href="cafes.html">咖啡館</a></li>
-                <li><a href="night_market.html">夜市</a></li>
-              
-                <li><a href="contact.html">聯繫我 </a></li>
-                </ul>
-            </ul>
-        </nav>
-    </header>
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">我的探店之旅</a>
+    <nav class="site-nav" aria-label="網站導覽"><ul><li><a href="chinese_restaurant.html">中式餐廳</a></li><li><a href="foreign_restaurant.html">西式餐廳</a></li><li><a href="bistro.html">餐酒館</a></li><li><a href="ramen.html">拉麵館</a></li><li><a href="cafes.html">咖啡館</a></li><li><a href="night_market.html">夜市</a></li><li class="nav-contact"><a href="contact.html">聯絡我們</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<div class="wrap">
+  <section class="hero" aria-labelledby="hero-title">
+    <div>
+      <h1 id="hero-title">台北這幾家，<br>我們吃過才寫。</h1>
+      <p>小羊和微笑的探店筆記：6 種類別、18 家店，每家都附上地址、電話、營業時間，還有我們自己的真心話。</p>
+    </div>
+    <div>
+      <p class="hero-prompt">今天想吃什麼？</p>
+      <nav class="plaque-wall" aria-label="店家類別"><ul class="plaques"><li><a class="plaque" href="chinese_restaurant.html"><span class="plaque-name">中式</span><span class="plaque-count"><span class="tcy">3</span>家</span></a></li><li><a class="plaque" href="foreign_restaurant.html"><span class="plaque-name">西式</span><span class="plaque-count"><span class="tcy">3</span>家</span></a></li><li><a class="plaque" href="bistro.html"><span class="plaque-name">餐酒館</span><span class="plaque-count"><span class="tcy">3</span>家</span></a></li><li><a class="plaque" href="ramen.html"><span class="plaque-name">拉麵</span><span class="plaque-count"><span class="tcy">3</span>家</span></a></li><li><a class="plaque" href="cafes.html"><span class="plaque-name">咖啡館</span><span class="plaque-count"><span class="tcy">3</span>家</span></a></li><li><a class="plaque" href="night_market.html"><span class="plaque-name">夜市</span><span class="plaque-count"><span class="tcy">3</span>家</span></a></li></ul></nav>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2024 我的探店之旅. 版權所有.</p>
-    </footer>
+  <section aria-labelledby="list-title">
+    <div class="section-head">
+      <h2 id="list-title">18 家店一覽</h2>
+      <p data-want-count>勾選「想去」，這台裝置會幫你記住。</p>
+    </div>
+    <div class="order-sheet">
+      <table>
+        <thead><tr><th class="col-want" scope="col">想去</th><th scope="col">店名</th>
+        <th class="col-cat" scope="col">類別</th><th class="col-area" scope="col">地區</th>
+        <th class="col-who" scope="col">寫的人</th></tr></thead>
+        <tbody><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="chinese_restaurant1.html" aria-label="想去 忠青商行"><span class="box" aria-hidden="true"></span></label></td><td><a href="chinese_restaurant1.html">忠青商行</a><span class="row-meta">中式餐廳　中正區</span></td><td class="col-cat"><a href="chinese_restaurant.html" class="muted">中式餐廳</a></td><td class="col-area muted">中正區</td><td class="col-who muted">小羊</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="chinese_restaurant2.html" aria-label="想去 刁民酸菜魚"><span class="box" aria-hidden="true"></span></label></td><td><a href="chinese_restaurant2.html">刁民酸菜魚</a><span class="row-meta">中式餐廳　萬華區</span></td><td class="col-cat"><a href="chinese_restaurant.html" class="muted">中式餐廳</a></td><td class="col-area muted">萬華區</td><td class="col-who muted">小羊</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="chinese_restaurant3.html" aria-label="想去 巧之味手工水餃"><span class="box" aria-hidden="true"></span></label></td><td><a href="chinese_restaurant3.html">巧之味手工水餃</a><span class="row-meta">中式餐廳　中正區</span></td><td class="col-cat"><a href="chinese_restaurant.html" class="muted">中式餐廳</a></td><td class="col-area muted">中正區</td><td class="col-who muted">微笑</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="foreign_restaurant1.html" aria-label="想去 BT Burger"><span class="box" aria-hidden="true"></span></label></td><td><a href="foreign_restaurant1.html">BT Burger</a><span class="row-meta">西式餐廳　大安區</span></td><td class="col-cat"><a href="foreign_restaurant.html" class="muted">西式餐廳</a></td><td class="col-area muted">大安區</td><td class="col-who muted">微笑</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="foreign_restaurant2.html" aria-label="想去 UMAMI金色三麥"><span class="box" aria-hidden="true"></span></label></td><td><a href="foreign_restaurant2.html">UMAMI金色三麥</a><span class="row-meta">西式餐廳　信義區</span></td><td class="col-cat"><a href="foreign_restaurant.html" class="muted">西式餐廳</a></td><td class="col-area muted">信義區</td><td class="col-who muted">小羊</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="foreign_restaurant3.html" aria-label="想去 Butcher jr. by Lanpengyou"><span class="box" aria-hidden="true"></span></label></td><td><a href="foreign_restaurant3.html">Butcher jr. by Lanpengyou</a><span class="row-meta">西式餐廳　中山區</span></td><td class="col-cat"><a href="foreign_restaurant.html" class="muted">西式餐廳</a></td><td class="col-area muted">中山區</td><td class="col-who muted">小羊</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="bistro1.html" aria-label="想去 Sleep No More"><span class="box" aria-hidden="true"></span></label></td><td><a href="bistro1.html">Sleep No More</a><span class="row-meta">餐酒館　信義區</span></td><td class="col-cat"><a href="bistro.html" class="muted">餐酒館</a></td><td class="col-area muted">信義區</td><td class="col-who muted">微笑</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="bistro2.html" aria-label="想去 冰茶專賣店"><span class="box" aria-hidden="true"></span></label></td><td><a href="bistro2.html">冰茶專賣店</a><span class="row-meta">餐酒館　萬華區</span></td><td class="col-cat"><a href="bistro.html" class="muted">餐酒館</a></td><td class="col-area muted">萬華區</td><td class="col-who muted">小羊</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="bistro3.html" aria-label="想去 離城放感情"><span class="box" aria-hidden="true"></span></label></td><td><a href="bistro3.html">離城放感情</a><span class="row-meta">餐酒館　大安區</span></td><td class="col-cat"><a href="bistro.html" class="muted">餐酒館</a></td><td class="col-area muted">大安區</td><td class="col-who muted">小羊</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="ramen1.html" aria-label="想去 荷麵亭"><span class="box" aria-hidden="true"></span></label></td><td><a href="ramen1.html">荷麵亭</a><span class="row-meta">拉麵館　士林區</span></td><td class="col-cat"><a href="ramen.html" class="muted">拉麵館</a></td><td class="col-area muted">士林區</td><td class="col-who muted">微笑</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="ramen2.html" aria-label="想去 墨洋拉麵"><span class="box" aria-hidden="true"></span></label></td><td><a href="ramen2.html">墨洋拉麵</a><span class="row-meta">拉麵館　中正區</span></td><td class="col-cat"><a href="ramen.html" class="muted">拉麵館</a></td><td class="col-area muted">中正區</td><td class="col-who muted">小羊</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="ramen3.html" aria-label="想去 Okaeri 你回來啦拉麵"><span class="box" aria-hidden="true"></span></label></td><td><a href="ramen3.html">Okaeri 你回來啦拉麵</a><span class="row-meta">拉麵館　大安區</span></td><td class="col-cat"><a href="ramen.html" class="muted">拉麵館</a></td><td class="col-area muted">大安區</td><td class="col-who muted">小羊</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="cafes1.html" aria-label="想去 Ariel lee 李氏• Cafe"><span class="box" aria-hidden="true"></span></label></td><td><a href="cafes1.html">Ariel lee 李氏• Cafe</a><span class="row-meta">咖啡館　大安區</span></td><td class="col-cat"><a href="cafes.html" class="muted">咖啡館</a></td><td class="col-area muted">大安區</td><td class="col-who muted">小羊</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="cafes2.html" aria-label="想去 黑浮咖啡 RÊVE Café"><span class="box" aria-hidden="true"></span></label></td><td><a href="cafes2.html">黑浮咖啡 RÊVE Café</a><span class="row-meta">咖啡館　中山區</span></td><td class="col-cat"><a href="cafes.html" class="muted">咖啡館</a></td><td class="col-area muted">中山區</td><td class="col-who muted">微笑</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="cafes3.html" aria-label="想去 漫拾"><span class="box" aria-hidden="true"></span></label></td><td><a href="cafes3.html">漫拾</a><span class="row-meta">咖啡館　大同區</span></td><td class="col-cat"><a href="cafes.html" class="muted">咖啡館</a></td><td class="col-area muted">大同區</td><td class="col-who muted">小羊</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="night_market1.html" aria-label="想去 忠誠號"><span class="box" aria-hidden="true"></span></label></td><td><a href="night_market1.html">忠誠號</a><span class="row-meta">夜市　士林區</span></td><td class="col-cat"><a href="night_market.html" class="muted">夜市</a></td><td class="col-area muted">士林區</td><td class="col-who muted">微笑</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="night_market2.html" aria-label="想去 大統大牛排"><span class="box" aria-hidden="true"></span></label></td><td><a href="night_market2.html">大統大牛排</a><span class="row-meta">夜市　士林區</span></td><td class="col-cat"><a href="night_market.html" class="muted">夜市</a></td><td class="col-area muted">士林區</td><td class="col-who muted">小羊</td></tr><tr><td class="col-want"><label class="want"><input type="checkbox" data-want="night_market3.html" aria-label="想去 歐巴熱狗"><span class="box" aria-hidden="true"></span></label></td><td><a href="night_market3.html">歐巴熱狗</a><span class="row-meta">夜市　士林區</span></td><td class="col-cat"><a href="night_market.html" class="muted">夜市</a></td><td class="col-area muted">士林區</td><td class="col-who muted">微笑</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>&copy; 2024–2026 我的探店之旅　點評：小羊、微笑</p>
+    <p>店家資料整理於 2024 年，營業時間可能變動，出發前請先確認。</p>
+  </div>
+</footer>
+<script src="assets/site.js"></script>
 </body>
 </html>

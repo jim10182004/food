@@ -1,246 +1,63 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-Hant-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>餐厅介绍</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Noto Sans TC', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f2f5;
-        }
-
-        header {
-            background: linear-gradient(90deg, #1d1f21, #4e555b);
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-size: 2rem;
-            color: #333;
-        }
-
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .gallery img {
-            width: calc(33.333% - 10px);
-            border-radius: 10px;
-            flex-grow: 1;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        .restaurant-info {
-            margin-bottom: 20px;
-        }
-
-        .restaurant-info p {
-            margin: 5px 0;
-            color: #666;
-        }
-
-        .reviews {
-            margin-top: 20px;
-        }
-
-        .review {
-            background-color: #f8f9fa;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        .review p {
-            margin: 0;
-            color: #555;
-        }
-
-        footer {
-            background-color: #343a40;
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            padding-top: 60px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-
-        .modal-content {
-            -webkit-animation-name: zoom;
-            -webkit-animation-duration: 0.6s;
-            animation-name: zoom;
-            animation-duration: 0.6s;
-        }
-
-        @-webkit-keyframes zoom {
-            from {-webkit-transform: scale(0)} 
-            to {-webkit-transform: scale(1)}
-        }
-
-        @keyframes zoom {
-            from {transform: scale(0)} 
-            to {transform: scale(1)}
-        }
-
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        @media only screen and (max-width: 700px){
-            .modal-content {
-                width: 100%;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>漫拾｜咖啡館｜我的探店之旅</title>
+<meta name="description" content="漫拾（咖啡館，大同區）：地址、電話、營業時間和版主點評。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-    <header>
-        <h1></h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">主頁</a></li>
-                <li><a href="chinese_restaurant.html">中式餐廳</a></li>
-                <li><a href="foreign_restaurant.html">西式餐廳</a></li>
-                <li><a href="bistro.html">餐酒館</a></li>
-                <li><a href="ramen.html">拉麵館</a></li>
-                <li><a href="cafes.html">咖啡館</a></li>
-                <li><a href="night_market.html">夜市</a></li>
-               
-                <li><a href="contact.html">聯繫我 </a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="container">
-        <h1>《漫拾》</h1>
-        <div class="gallery">
-            <img src="https://tenjo.tw/wp-content/uploads/20201122162242_65.jpg" alt="餐厅照片1">
-            <img src="https://tenjo.tw/wp-content/uploads/20201122162256_34.jpg" alt="餐厅照片2">
-            <img src="https://tenjo.tw/wp-content/uploads/20201122164216_75.jpg" alt="餐厅照片3">
-            <!-- 添加更多图片 -->
-        </div>
-        <div class="restaurant-info">
-            <p><strong>地址:</strong> 台北市大同區承德路一段68-1號</p>
-            <p><strong>電話:</strong>02 2558 7058</p>
-            <p><strong>營業時間:</strong> 週二-週日13:00–21:00 (週一公休)
-            </p>
-        </div>
-        <div class="reviews">
-            <h2>版主點評</h2>
-            <div class="review">
-                <p><strong>小羊:</strong>以捷運中山站不限時咖啡店來說，《漫拾》的飲料甜點都算不錯
-
-                    算起來價格也不貴，有吃有喝300元左右搞定，有免費插座、wifi可以坐很久
-                    
-                    喜歡芋泥布丁的人推薦你來吃吃可頌，千層蛋糕雖不特別驚艷，但想吃還是可以吃啦
-                    
-                    </p>
-            </div>
-            <!-- 添加更多评论 -->
-        </div>
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">我的探店之旅</a>
+    <nav class="site-nav" aria-label="網站導覽"><ul><li><a href="chinese_restaurant.html">中式餐廳</a></li><li><a href="foreign_restaurant.html">西式餐廳</a></li><li><a href="bistro.html">餐酒館</a></li><li><a href="ramen.html">拉麵館</a></li><li><a href="cafes.html" aria-current="page">咖啡館</a></li><li><a href="night_market.html">夜市</a></li><li class="nav-contact"><a href="contact.html">聯絡我們</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<div class="wrap">
+  <header class="page-head">
+    <p class="crumb"><a href="cafes.html">咖啡館</a></p>
+    <h1>漫拾</h1>
+    <p class="lede">大同區</p>
+  </header>
+  <div class="gallery gallery-3"><button class="ph" type="button" data-zoom aria-label="放大 漫拾 照片 1"><img src="https://tenjo.tw/wp-content/uploads/20201122162242_65.jpg" alt="漫拾 照片 1" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('broken')"><span class="ph-fallback" aria-hidden="true">漫拾<br>照片暫時載不到</span></button><button class="ph" type="button" data-zoom aria-label="放大 漫拾 照片 2"><img src="https://tenjo.tw/wp-content/uploads/20201122162256_34.jpg" alt="漫拾 照片 2" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('broken')"><span class="ph-fallback" aria-hidden="true">漫拾<br>照片暫時載不到</span></button><button class="ph" type="button" data-zoom aria-label="放大 漫拾 照片 3"><img src="https://tenjo.tw/wp-content/uploads/20201122164216_75.jpg" alt="漫拾 照片 3" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('broken')"><span class="ph-fallback" aria-hidden="true">漫拾<br>照片暫時載不到</span></button></div>
+  <p class="credit">照片出處：tenjo.tw</p>
+  <div class="shop-body">
+    <div>
+      <section class="about"><h2>小羊的點評</h2><p class="note">以捷運中山站不限時咖啡店來說，《漫拾》的飲料甜點都算不錯 算起來價格也不貴，有吃有喝300元左右搞定，有免費插座、wifi可以坐很久 喜歡芋泥布丁的人推薦你來吃吃可頌，千層蛋糕雖不特別驚艷，但想吃還是可以吃啦</p></section>
+      <section class="about"><h2>店家介紹</h2><p>漫拾專賣可頌、泡芙，泡芙造型超卡哇伊，人氣芋頭可頌也是必點，夾著兩個布丁，搭配芋泥綿密口感，這組合非常犯規！千層也很有水準，可以加點可愛造型棉花糖。店裡不限時不收服務費又有插座，非常佛心，也聚集許多學生讀書。店內環境舒適，適合聊天也適合工作～</p></section>
     </div>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
-    </div>
-
-    <footer>
-        <p>&copy; 2024 我的探店之旅. 版權所有.</p>
-    </footer>
-
-    <script>
-        // 获取模态窗口
-        var modal = document.getElementById("myModal");
-
-        // 获取图片，并在点击时将其显示在模态窗口中
-        var modalImg = document.getElementById("img01");
-        var images = document.querySelectorAll(".gallery img");
-        images.forEach(img => {
-            img.onclick = function() {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-            }
-        });
-
-        // 获取 <span> 元素，设置关闭模态窗口的功能
-        var span = document.getElementsByClassName("close")[0];
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-    </script>
+    <aside class="slip" aria-labelledby="slip-title">
+      <h2 id="slip-title">店家資訊</h2>
+      <dl>
+        <div class="row"><dt>地址</dt><dd>台北市大同區承德路一段68-1號<br><a href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A4%A7%E5%90%8C%E5%8D%80%E6%89%BF%E5%BE%B7%E8%B7%AF%E4%B8%80%E6%AE%B568-1%E8%99%9F" target="_blank" rel="noopener">在 Google 地圖開啟</a></dd></div>
+        <div class="row"><dt>電話</dt><dd><a class="tel" href="tel:0225587058">02 2558 7058</a></dd></div>
+        <div class="row"><dt>營業時間</dt><dd>週二-週日13:00–21:00 (週一公休)</dd></div>
+      </dl>
+      <div class="slip-foot">
+        <label class="want-label"><label class="want"><input type="checkbox" data-want="cafes3.html" aria-label="想去 漫拾"><span class="box" aria-hidden="true"></span></label>想去這家</label>
+        <p>資料整理於 2024 年，出發前請先確認營業時間。</p>
+      </div>
+    </aside>
+  </div>
+  <nav class="pager" aria-label="同類別的其他店"><a class="prev" href="cafes2.html"><span>上一家</span><strong>黑浮咖啡 RÊVE Café</strong></a><a class="next" href="cafes.html"><span>看完了</span><strong>回到咖啡館</strong></a></nav>
+</div>
+<dialog class="lightbox" aria-label="放大照片">
+  <form method="dialog"><button>關閉</button></form>
+  <img alt="">
+</dialog>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>&copy; 2024–2026 我的探店之旅　點評：小羊、微笑</p>
+    <p>店家資料整理於 2024 年，營業時間可能變動，出發前請先確認。</p>
+  </div>
+</footer>
+<script src="assets/site.js"></script>
 </body>
 </html>
