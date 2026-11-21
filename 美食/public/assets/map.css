@@ -1,0 +1,293 @@
+/* 美食地圖頁（map.html）專用樣式：可拖曳旋轉的 CSS 3D 台北地面＋菜牌圖釘 */
+
+.map-app {
+  --m-page: var(--paper);
+  --m-surf: #FFFFFF;
+  --m-surf2: var(--grid-wash);
+  --m-line: var(--grid-line);
+  --m-ink: var(--ink);
+  --m-soft: var(--ink-soft);
+  --m-accent: var(--red);
+  --m-accent-ink: #FFFFFF;
+  --stage: #E4EEE7;
+  --ground: #FFFFFF;
+  --gridc: #E3EEE7;
+  --river: #BFD9DD;
+  --river-text: #3F6F78;
+  --dist: #8FA597;
+  --btop: #F3F6F1;
+  --bside: #C9D8CD;
+  --win: rgba(46, 122, 87, .16);
+  --slab: #6B4A31;
+  --slab2: #553A26;
+  --mt1: #E6EDD5; --mt2: #D5E0BD; --mt3: #C2D2A3; --mt4: #AEC28A;
+  --lm-bg: var(--ink); --lm-ink: #FFFFFF;
+  --station: var(--rail);
+  --t101: #A9C3C6; --t101b: #86A6AA;
+  background: var(--m-page);
+  color: var(--m-ink);
+  transition: background-color .3s;
+}
+.map-app.night {
+  --ink: #EEF2EC;
+  --ink-soft: #B3C0B8;
+  --grid: #8FD0AC;
+  --m-page: #141A17;
+  --m-surf: #1D2521;
+  --m-surf2: #26302B;
+  --m-line: #37443D;
+  --m-ink: #EEF2EC;
+  --m-soft: #B3C0B8;
+  --m-accent: #F0A23C;
+  --m-accent-ink: #141A17;
+  --stage: #0E1311;
+  --ground: #18201C;
+  --gridc: rgba(190, 230, 205, .07);
+  --river: #24434C;
+  --river-text: #8FB8C2;
+  --dist: #6F8579;
+  --btop: #2C3631;
+  --bside: #222A26;
+  --win: rgba(240, 180, 80, .6);
+  --slab: #0F1411; --slab2: #0A0E0C;
+  --mt1: #20281E; --mt2: #283223; --mt3: #303C29; --mt4: #3A4830;
+  --lm-bg: #EEF2EC; --lm-ink: #141A17;
+  --station: #EEF2EC;
+  --t101: #4A6670; --t101b: #34505A;
+}
+
+.map-wrap { max-width: 1400px; }
+.map-head { padding-bottom: 8px; }
+.map-head .lede { max-width: 40em; }
+
+.map-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+  padding-bottom: 48px;
+}
+.map-side {
+  flex: 1 1 320px;
+  max-width: 420px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.map-main {
+  flex: 999 1 560px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+/* 手機、平板：篩選 → 地圖 → 店家卡片 → 一覽，點了圖釘卡片就在地圖正下方 */
+@media (max-width: 899px) {
+  .map-layout { flex-direction: column; align-items: stretch; }
+  .map-side { display: contents; }
+  .chips { order: 1; }
+  .map-main { order: 2; flex: none; }
+  .shop-card { order: 3; }
+  .shop-index { order: 4; }
+}
+
+/* ---------- 篩選 ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.chip {
+  min-height: 44px; padding: 0 14px;
+  display: flex; align-items: center; gap: 8px;
+  border: 1px solid var(--m-line); border-radius: 22px;
+  background: var(--m-surf); color: var(--m-ink);
+  font: inherit; font-size: var(--step--1); font-weight: 500; cursor: pointer;
+}
+.chip:hover { background: var(--m-surf2); }
+.chip[aria-pressed="true"] { background: var(--m-accent); color: var(--m-accent-ink); border-color: var(--m-accent); }
+.chip .sw { width: 12px; height: 12px; border-radius: 3px; }
+.chip .n { font-size: 13px; opacity: .8; }
+
+/* ---------- 店家卡片 ---------- */
+.shop-card {
+  background: var(--m-surf); border: 1px solid var(--m-line); border-radius: 10px;
+  padding: 18px; display: flex; flex-direction: column; gap: 12px;
+}
+.shop-card[hidden] { display: none; }
+.card-top { display: flex; align-items: flex-start; gap: 12px; }
+.card-top > div { flex: 1; min-width: 0; }
+.card-top h2 { margin: 0; font-family: var(--font-hand); font-size: var(--step-2); line-height: 1.3; }
+.card-meta { margin: 0; font-size: var(--step--1); color: var(--m-soft); }
+.card-photo { margin: 0; aspect-ratio: 16 / 9; border-radius: var(--radius-photo); overflow: hidden; background: var(--m-surf2); }
+.card-photo img { width: 100%; height: 100%; object-fit: cover; }
+.card-photo.broken img { display: none; }
+.shop-card p { margin: 0; }
+.card-said { margin: 0; background: var(--m-surf2); border-radius: 8px; padding: 12px 14px; }
+.card-said blockquote { margin: 0; font-family: var(--font-hand); font-size: var(--step-1); line-height: 1.6; }
+.card-said figcaption { margin-top: 4px; font-size: 13px; color: var(--m-soft); }
+.card-info { margin: 0; display: grid; grid-template-columns: 4.5em minmax(0, 1fr); gap: 6px 10px; font-size: var(--step--1); line-height: 1.6; }
+.card-info dt { color: var(--m-soft); }
+.card-info dd { margin: 0; }
+.card-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.card-note { font-size: 12px; color: var(--m-soft); }
+
+.mbtn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  min-height: 44px; padding: 0 14px; border-radius: 8px;
+  border: 1px solid var(--m-line); background: transparent; color: var(--m-ink);
+  font: inherit; font-size: var(--step--1); font-weight: 700; text-decoration: none; cursor: pointer;
+}
+.mbtn:hover { background: var(--m-surf2); color: var(--m-ink); }
+.mbtn.primary { background: var(--m-accent); border-color: var(--m-accent); color: var(--m-accent-ink); }
+.mbtn.primary:hover { filter: brightness(1.08); color: var(--m-accent-ink); }
+.mbtn.want-btn { border-color: var(--m-accent); }
+.mbtn.want-btn[aria-pressed="true"] { background: var(--m-accent); color: var(--m-accent-ink); }
+.mbtn.icon { min-width: 44px; padding: 0 10px; }
+
+/* ---------- 店家一覽 ---------- */
+.shop-index { background: var(--m-surf); border: 1px solid var(--m-line); border-radius: 10px; overflow: hidden; }
+.shop-index-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 14px; border-bottom: 1px solid var(--m-line); font-weight: 700;
+}
+.shop-index-head span { color: var(--m-soft); font-weight: 500; font-size: var(--step--1); }
+.shop-index-empty { margin: 0; padding: 18px 14px; font-size: var(--step--1); color: var(--m-soft); }
+.shop-rows { max-height: 440px; overflow-y: auto; margin: 0; padding: 0; list-style: none; }
+.shop-row {
+  display: flex; align-items: center; gap: 12px; width: 100%; min-height: 58px;
+  padding: 8px 14px; border: 0; border-bottom: 1px solid var(--m-line);
+  background: transparent; color: var(--m-ink); font: inherit; text-align: left; cursor: pointer;
+}
+.shop-row:hover { background: var(--m-surf2); }
+.shop-row[aria-pressed="true"] { background: var(--m-surf2); box-shadow: inset 4px 0 0 var(--m-accent); }
+.shop-row .txt { display: flex; flex-direction: column; min-width: 0; flex: 1; line-height: 1.4; }
+.shop-row .txt strong { font-size: var(--step-0); }
+.shop-row .txt span { font-size: 13px; color: var(--m-soft); }
+.shop-row .heart { color: var(--red); flex: none; }
+
+.mini {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: 32px; height: 36px; border-radius: 7px;
+  font-family: var(--font-hand); font-size: 19px; font-weight: 700;
+}
+
+/* 類別配色（圖釘、清單小牌共用） */
+.cat-chinese { background: #C62230; color: #FFFFFF; --glow: rgba(198, 34, 48, .7); }
+.cat-western { background: #E8A23A; color: #2B1A08; --glow: rgba(232, 162, 58, .7); }
+.cat-bistro  { background: #7B5EA7; color: #FFFFFF; --glow: rgba(123, 94, 167, .75); }
+.cat-ramen   { background: #D9732E; color: #2B1A08; --glow: rgba(217, 115, 46, .7); }
+.cat-cafe    { background: #8A6646; color: #FFFFFF; --glow: rgba(165, 122, 82, .7); }
+.cat-night   { background: #2E7A57; color: #FFFFFF; --glow: rgba(46, 160, 110, .7); }
+
+/* ---------- 3D 舞台 ---------- */
+.stage {
+  position: relative; height: 680px; overflow: hidden;
+  perspective: 1600px;
+  background: var(--stage); border: 1px solid var(--m-line); border-radius: 10px;
+  cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none;
+}
+.stage.dragging { cursor: grabbing; }
+@media (max-width: 759px) { .stage { height: 500px; } }
+
+.anchor { position: absolute; left: 50%; top: 50%; width: 0; height: 0; transform-style: preserve-3d; transform-origin: 0 0; }
+.plane {
+  position: absolute; width: 860px; height: 1110px; transform-style: preserve-3d;
+  background-color: var(--ground);
+  background-image: linear-gradient(var(--gridc) 1px, transparent 1px), linear-gradient(90deg, var(--gridc) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.plane > svg { position: absolute; left: 0; top: 0; }
+.side { position: absolute; background: var(--slab); }
+.side.b { background: var(--slab2); }
+.district {
+  position: absolute; transform: translate(-50%, -50%);
+  font-family: var(--font-hand); font-size: 34px; font-weight: 700; letter-spacing: 6px;
+  color: var(--dist); white-space: nowrap; pointer-events: none;
+}
+.bx { position: absolute; transform-style: preserve-3d; }
+.bx > i { position: absolute; display: block; }
+.bx .t { left: 0; top: 0; width: 100%; height: 100%; background: var(--btop); transform: translateZ(var(--h)); }
+.bx .n, .bx .s {
+  left: 0; width: 100%; height: var(--h); transform-origin: 0 0; transform: rotateX(90deg);
+  background-color: var(--bside);
+  background-image: repeating-linear-gradient(0deg, transparent 0 6px, var(--win) 6px 8px);
+}
+.bx .n { top: 0; }
+.bx .s { top: 100%; }
+.bx .w, .bx .e {
+  top: 0; width: var(--h); height: 100%; transform-origin: 0 0; transform: rotateY(-90deg);
+  background-color: var(--bside);
+  background-image: repeating-linear-gradient(90deg, transparent 0 6px, var(--win) 6px 8px);
+  filter: brightness(.82);
+}
+.bx .w { left: 0; }
+.bx .e { left: 100%; }
+.bx.st .t { background: var(--station); }
+.bx.tw .t { background: var(--t101); }
+.bx.tw .n, .bx.tw .s { background-color: var(--t101b); background-image: repeating-linear-gradient(0deg, transparent 0 11px, var(--m-accent) 11px 13px); }
+.bx.tw .w, .bx.tw .e { background-color: var(--t101b); background-image: repeating-linear-gradient(90deg, transparent 0 11px, var(--m-accent) 11px 13px); }
+.mt { position: absolute; border-radius: 50%; }
+
+.overlay { position: absolute; inset: 0; pointer-events: none; }
+.lm {
+  position: absolute; transform: translate(-50%, -100%);
+  background: var(--lm-bg); color: var(--lm-ink);
+  font-size: 12px; font-weight: 700; line-height: 1.6; padding: 2px 8px; border-radius: 4px; white-space: nowrap;
+}
+.pin { position: absolute; width: 0; height: 0; }
+.pin[hidden] { display: none; }
+.pin-body { position: absolute; left: 0; top: 0; transform-origin: 50% 100%; display: flex; flex-direction: column; align-items: center; }
+.pin-btn {
+  pointer-events: auto; display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 0; border: 0; background: none; cursor: pointer; font: inherit;
+}
+.pin-btn .tag { display: none; }
+.pin-btn[aria-pressed="true"] .tag { display: block; }
+.tile {
+  display: flex; align-items: center; justify-content: center; width: 38px; height: 42px; border-radius: 9px;
+  font-family: var(--font-hand); font-size: 23px; font-weight: 700;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, .35); transition: transform .15s;
+}
+.night .tile { box-shadow: 0 5px 0 rgba(0, 0, 0, .5), 0 0 22px var(--glow); }
+.pin-btn:hover .tile { transform: translateY(-4px); }
+.pin-btn[aria-pressed="true"] .tile { width: 48px; height: 54px; font-size: 29px; outline: 3px solid var(--m-ink); outline-offset: 3px; }
+.pin-btn[aria-pressed="true"] { animation: bob 1.6s ease-in-out infinite; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@media (prefers-reduced-motion: reduce) { .pin-btn[aria-pressed="true"] { animation: none; } .tile { transition: none; } }
+.tag {
+  background: var(--m-surf); color: var(--m-ink); border: 2px solid var(--m-ink); border-radius: 6px;
+  padding: 2px 12px; font-size: 15px; font-weight: 700; white-space: nowrap; line-height: 1.5;
+}
+.stick { width: 4px; height: 26px; background: var(--m-soft); border-radius: 2px; }
+.dot { position: absolute; left: -11px; top: -5px; width: 22px; height: 10px; border-radius: 50%; background: rgba(0, 0, 0, .32); }
+.night .dot { background: var(--glow); filter: blur(3px); }
+
+.stage-ctrls { position: absolute; right: 12px; top: 12px; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+.stage-ctrls > div { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; align-items: center; }
+.ctrl {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  min-width: 44px; height: 44px; padding: 0 10px;
+  border: 1px solid var(--m-line); border-radius: 8px;
+  background: var(--m-surf); color: var(--m-ink);
+  font: inherit; font-size: 14px; font-weight: 700; cursor: pointer;
+}
+.ctrl:hover { background: var(--m-surf2); }
+.ctrl[aria-pressed="true"] { border-color: var(--m-accent); }
+.tilt-ctrl {
+  display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 12px;
+  background: var(--m-surf); border: 1px solid var(--m-line); border-radius: 8px;
+  font-size: 14px; font-weight: 700;
+}
+.tilt-ctrl input { width: 110px; accent-color: var(--m-accent); }
+.compass {
+  position: absolute; left: 12px; top: 12px; width: 52px; height: 52px; border-radius: 50%;
+  background: var(--m-surf); border: 1px solid var(--m-line);
+  display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 559px) {
+  .stage-ctrls { left: 72px; }
+  .tilt-ctrl { display: none; }          /* 手機用手指上下拖就能調傾斜 */
+  [data-night] span { display: none; }
+}
+
+.map-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 0; padding: 0; list-style: none; font-size: var(--step--1); color: var(--m-soft); align-items: center; }
+.map-legend li { display: flex; align-items: center; gap: 6px; }
+.map-legend .mini { width: 24px; height: 26px; font-size: 14px; }
