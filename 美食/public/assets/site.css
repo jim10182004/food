@@ -592,3 +592,6 @@ a.ph:hover img { opacity: 0.92; }
 }
 .map-teaser h2 { margin: 0; font-family: var(--font-hand); font-size: var(--step-2); line-height: 1.3; }
 .map-teaser p { margin: 0; color: var(--ink-soft); }
+
+/* 防機器人的隱藏欄位 */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }

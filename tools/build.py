@@ -436,10 +436,11 @@ contact = """<div class="wrap">
       <p class="note">有你私心推薦、我們還沒去過的店嗎？寫下店名和地區，我們排進下次的探店清單。</p>
     </div>
     <div class="contact-form">
-      <form action="/submit_contact_form" method="post">
-        <div class="field"><label for="name">你的名字</label><input type="text" id="name" name="name" autocomplete="name" required></div>
-        <div class="field"><label for="email">Email（回信用）</label><input type="email" id="email" name="email" autocomplete="email" required></div>
-        <div class="field"><label for="message">想說的話</label><textarea id="message" name="message" rows="6" required></textarea></div>
+      <form action="https://food-contact.jim20041018.workers.dev/submit_contact_form" method="post">
+        <div class="field"><label for="name">你的名字</label><input type="text" id="name" name="name" autocomplete="name" maxlength="50" required></div>
+        <div class="field"><label for="email">Email（回信用）</label><input type="email" id="email" name="email" autocomplete="email" maxlength="254" required></div>
+        <div class="field"><label for="message">想說的話</label><textarea id="message" name="message" rows="6" maxlength="2000" required></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="website">網站（請留空）</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
         <button class="btn" type="submit">送出留言</button>
         <p class="form-status" role="status" aria-live="polite"></p>
       </form>

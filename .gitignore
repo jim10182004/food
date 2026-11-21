@@ -5,3 +5,7 @@
 # Node / Python
 node_modules/
 __pycache__/
+
+# wrangler 本機暫存
+worker/.wrangler/
+node_modules/

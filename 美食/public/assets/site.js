@@ -46,7 +46,7 @@
     dialog.addEventListener("click", function (e) { if (e.target === dialog) dialog.close(); });
   }
 
-  // 聯絡表單：送到 server.js 的 /submit_contact_form
+  // 聯絡表單：送到 Cloudflare Worker（worker/），留言存在 D1 資料庫
   var form = document.querySelector(".contact-form form");
   if (form) {
     var status = form.querySelector(".form-status");
@@ -62,13 +62,15 @@
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(new FormData(form)).toString()
       }).then(function (res) {
-        if (!res.ok) throw new Error(res.status);
+        if (!res.ok) throw new Error(String(res.status));
         form.reset();
         status.className = "form-status ok";
         status.textContent = "留言已送出，謝謝你！我們會盡快回信。";
-      }).catch(function () {
+      }).catch(function (err) {
         status.className = "form-status err";
-        status.textContent = "留言沒有送出，請稍後再試一次。";
+        status.textContent = err && err.message === "429"
+          ? "這一小時留言太多次了，請晚一點再試。"
+          : "留言沒有送出，請稍後再試一次。";
       }).finally(function () {
         btn.disabled = false;
         btn.textContent = "送出留言";

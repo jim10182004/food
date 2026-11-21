@@ -1,0 +1,15 @@
+// 部署：cd worker && npx wrangler deploy
+// 看留言：npx wrangler d1 execute food_contact --remote --command "SELECT * FROM messages ORDER BY id DESC"
+{
+  "name": "food-contact",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "food_contact",
+      "database_id": "fd2d1965-6834-4c66-a35f-72263b192659"
+    }
+  ]
+}
